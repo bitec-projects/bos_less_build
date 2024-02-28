@@ -1,0 +1,33 @@
+{
+    "name": "bos-less-build",
+    "version": "0.0.1",
+    "description": "Bos less build, compile less files",
+    "author": {
+        "name": "Carlos Eduardo Bier",
+        "email": "eduardo.bier@bitec.dev.br"
+    },
+    "main": "bos-less-build.js",
+    "bin": {
+        "boslessbuild": "./bin/boslessbuild"
+    },
+    "scripts": {
+        "test": "echo 'No test are configured'; exit 0;"
+    },
+    "keywords": [
+        "less",
+        "watch",
+        "filesystem",
+        "css"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "chokidar": "^3.5.3",
+        "extend": "*",
+        "less": ">=2.0",
+        "minimist": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bitec-projects/bos_less_build.git"
+    }
+}

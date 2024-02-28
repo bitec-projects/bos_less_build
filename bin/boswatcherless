@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var minimist = require("minimist"),
+    bosLessBuild = require("../bos-less-build.js");
+
+var argv = minimist(process.argv.slice(2), {
+    boolean: ["c", "h"],
+    alias: { compress: "c", help: "h" },
+});
+
+if (argv.h) {
+    console.log(" ");
+    console.log("Usage: boslessbuild [options] <source> <destination>");
+    console.log(" ");
+    console.log("  <source>             =   The source directory or less file to compile");
+    console.log("  <destination>        =   The destination directory for the compiled CSS");
+    console.log(" ");
+    console.log("  OPTIONS");
+    console.log("     -e, --extension   =   The extension for the compiled CSS file, .min is prefixed if compression is enabled");
+    console.log("     -c, --compress    =   Enable compress on compiled CSS");
+    console.log("     -j, --justcompile =   Enable just compile all files options");
+    console.log("     -h, --help        =   This menu");
+    console.log(" ");
+    return;
+}
+
+var settings = {
+    justcompile: argv.j || argv.justcompile,
+    compress: argv.c || argv.compress,
+    extension: argv.e || argv.extension || ".css",
+};
+
+settings.destination = argv._.pop();
+settings.source = argv._.pop();
+
+bosLessBuild(settings);
