@@ -1,6 +1,6 @@
 {
     "name": "bos-less-build",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Bos less build, compile less files",
     "author": {
         "name": "Carlos Eduardo Bier",
